@@ -1,0 +1,27 @@
+{
+  "name": "xinquji-weekly",
+  "version": "1.0.0",
+  "description": "Hacker News Daily/Weekly/Monthly headlines",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uniquexiaobai/xinquji-weekly.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uniquexiaobai/xinquji-weekly/issues"
+  },
+  "homepage": "https://github.com/uniquexiaobai/xinquji-weekly#readme",
+  "dependencies": {
+    "@octokit/core": "^3.1.2",
+    "axios": "^0.19.2",
+    "dayjs": "^1.8.32",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {}
+}

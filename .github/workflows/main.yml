@@ -1,0 +1,24 @@
+name: alligator-weekly
+
+# https://docs.github.com/cn/free-pro-team@latest/actions/reference/events-that-trigger-workflows#%E5%AE%89%E6%8E%92%E7%9A%84%E4%BA%8B%E4%BB%B6
+on:
+  schedule:
+    - cron: '1 0 * * 5' # 每周5
+
+jobs:
+  fetch-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: npm install --only=prod
+        working-directory: .
+      - name: fetch
+        run: node index.js
+        working-directory: .
+        env:
+          personalAccessToken: ${{ secrets.personalAccessToken }}
