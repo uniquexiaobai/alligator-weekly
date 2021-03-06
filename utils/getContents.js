@@ -1,18 +1,23 @@
-const axios = require('axios');
+const got = require('got');
 
 const getContents = async () => {
-  console.log('start fetching headlines');
+  console.log('start fetching');
   try {
-    const { data } = await axios.get(
-      'https://top-api.lokibai.vercel.app/?target=alligator'
+    const { body } = await got(
+      'https://top-api.lokibai.vercel.app/?target=alligator',
+      {
+        responseType: 'json',
+      }
     );
-    console.log('data', data);
-    const contents = data.list
-      .map(({ title, desc, url }, i) => {
-        return `${i + 1}. [**${title}**](${url}) ${desc}`;
+    console.log('response', body);
+
+    const contents = body.list
+      .map(({ title, url }, i) => {
+        return `${i + 1}. [**${title}**](${url})`;
       })
       .join('\n\r');
     console.log('contents', contents);
+
     return contents;
   } catch (error) {
     console.log('error', error);

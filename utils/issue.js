@@ -1,4 +1,4 @@
-const { Octokit } = require('@octokit/core');
+const { Octokit } = require('@octokit/rest');
 
 const accessToken = process.env.personalAccessToken;
 

@@ -7,7 +7,7 @@ const run = async date => {
   const res = await issue.open({
     owner: 'uniquexiaobai',
     repo: 'alligator-weekly',
-    title: `新趣集 @${new Date(date).toISOString().slice(0, 10)}`,
+    title: `Alligator @${new Date(date).toISOString().slice(0, 10)}`,
     body: contents,
   });
 
