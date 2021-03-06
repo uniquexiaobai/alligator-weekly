@@ -4,6 +4,7 @@ name: alligator-weekly
 on:
   schedule:
     - cron: '1 0 * * 5' # 每周5
+  workflow_dispatch:
 
 jobs:
   fetch-posts:
